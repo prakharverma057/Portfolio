@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
-import { useState as reactUseState } from "react";
+import { useEffect, useState } from "react";
 
 const CursorTrail = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    interface MouseEventWithClient extends MouseEvent {
-      clientX: number;
-      clientY: number;
-    }
-
-    const handleMouseMove = (e: MouseEventWithClient) => {
+    const handleMouseMove = (e: { clientX: number; clientY: number }) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -27,16 +21,12 @@ const CursorTrail = () => {
         y: mousePosition.y - 8,
       }}
       transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 28,
+        type: "tween",
+        stiffness: 100,
+        damping: 20,
       }}
     />
   );
 };
 
 export default CursorTrail;
-function useState<T>(initialValue: T): [T, (value: T) => void] {
-  const [state, setState] = reactUseState(initialValue);
-  return [state, setState];
-}

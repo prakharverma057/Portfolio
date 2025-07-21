@@ -1,68 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { experiences } from "../constants/experiences";
 
 const ExperienceSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const experiences = [
-    {
-      title: "Physics Teacher",
-      company: "JEE Academy.",
-      period: "2022",
-      description:
-        "Taught Phyiscs concepts for kids of intermediate school to prepare them for JEE",
-    },
-    {
-      title: "Physics Tutor",
-      company: "Amulya Institute",
-      period: "2022",
-      description:
-        "Built curriculum to gather interest of highschool students in physics and turn them passionate for learnign.",
-    },
-    {
-      title: "Executive Marketing Lead",
-      company: "TBA- The Badnaam Adda",
-      period: "2023",
-      description:
-        "HoReCa | Developed marketing leads and promotional relationship with different companies and colleges.",
-    },
-    {
-      title: "Founding Operations Member",
-      company: "The Hoomies",
-      period: "2023",
-      description:
-        "Built connections, overloked operations and multiple departments and delt with public interactions",
-    },
-    {
-      title: "Event Management",
-      company: "Phaze Experience",
-      period: "2023",
-      description:
-        "Did extensive work during India's first MotoGP event with over 150.000+ audience. Led A team and functional across multiple focus teams.",
-    },
-    {
-      title: "Event Management",
-      company: "JSS Incubator",
-      period: "2024",
-      description:
-        "Led a team of 30+ members to manage a professional event end-to-end",
-    },
-    {
-      title: "Fest Management",
-      company: "JSS Incubator",
-      period: "2025",
-      description:
-        "Managed sponsorships, security and on ground opertions during large scale university fest",
-    },
-    {
-      title: "Core Team Cooridnator",
-      company: "JSS E-Cell",
-      period: "2025",
-      description:
-        "Leading Team of 80+ members, embarking entreprenurship journey in each. Collaborated with various companies like Microsoft, GFG, Monster energy, Smaaash, Glued  etc. ",
-    },
-  ];
+  const isInView = useInView(ref, { once: false });
 
   return (
     <section
@@ -74,6 +16,7 @@ const ExperienceSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
@@ -86,13 +29,13 @@ const ExperienceSection = () => {
         <div className="max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.title}
+              key={exp.id}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 1.5, delay: 1 }}
-              className={`flex items-center mb-8 ${
-                index % 2 === 0 ? "" : "flex-row-reverse"
-              }`}
+              transition={{ duration: 1, delay: 0.5 }}
+              className={`flex items-center mb-8 
+                  ${index % 2 === 0 ? "" : "flex-row-reverse"}
+                `}
             >
               <div className="flex-1">
                 <div

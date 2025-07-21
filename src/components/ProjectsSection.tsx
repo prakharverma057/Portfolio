@@ -1,48 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GitHub, ExternalLink } from "react-feather";
+import { projects } from "../constants/projects";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const projects = [
-    {
-      title: "Zentry - Metagame Marketplace",
-      description:
-        "A clone of Awwwards.com website; zentry.com. Build with Custom media kits.",
-      image: "/zenclone.png",
-      tech: ["React", "GSAP", "TailwindCSS", "UI kits"],
-      github: "https://github.com/prakharverma057/AwwwardsGame",
-      demo: "https://zenclone.netlify.app",
-    },
-    // {
-    //   title: "Task Management App",
-    //   description:
-    //     "Collaborative project management tool with real-time updates",
-    //   image: "/images/task-app.png",
-    //   tech: ["Next.js", "Socket.io", "MongoDB", "Tailwind"],
-    //   github: "#",
-    //   demo: "#",
-    // },
-    {
-      title: "RawgHub - Game discovery platform",
-      description:
-        "Discover over 500.000+ games with sorting/searching/filtering feautres. made with ReactTS, Chakra UI.",
-      image: "/rawghub.png",
-      tech: ["React", "TypeScript", "Chakra UI", "Axios", "Rawg API"],
-      github: "https://github.com/prakharverma057/rawghub",
-      demo: "https://rawghub.netlify.app",
-    },
-    // {
-    //   title: "Crypto Portfolio Tracker",
-    //   description: "Real-time cryptocurrency portfolio tracking dashboard",
-    //   image: "/images/crypto-tracker.png",
-    //   tech: ["Vue.js", "CoinGecko API", "Chart.js", "Firebase"],
-    //   github: "#",
-    //   demo: "#",
-    // },
-  ];
+  const isInView = useInView(ref, { once: false });
 
   return (
     <section
@@ -54,6 +17,7 @@ const ProjectsSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -109,7 +73,7 @@ const ProjectsSection = () => {
                     className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                   >
                     <GitHub size={16} />
-                    Code
+                    Source Code
                   </motion.a>
 
                   <motion.a
@@ -119,7 +83,7 @@ const ProjectsSection = () => {
                     className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <ExternalLink size={16} />
-                    Demo
+                    Go Live
                   </motion.a>
                 </div>
               </div>

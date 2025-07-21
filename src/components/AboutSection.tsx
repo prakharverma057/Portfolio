@@ -1,125 +1,36 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Trophy, Star, Zap, Rocket, Code, Briefcase } from "lucide-react";
-import { useTheme } from "../hooks/useTheme";
-// import { fadeInUp } from "../utils/animations";
-
-// const AboutSection = () => {
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once: true });
-
-//   const stats = [
-//     { label: "Projects Completed", value: "50+", icon: Trophy },
-//     { label: "Years Experience", value: "5+", icon: Star },
-//     { label: "Happy Clients", value: "30+", icon: Zap },
-//     { label: "Startups Founded", value: "3", icon: Rocket },
-//   ];
-
-//   return (
-//     <section id="about" ref={ref} className="py-20 bg-white dark:bg-gray-800">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <motion.div
-//           initial={{ opacity: 0, y: 50 }}
-//           animate={isInView ? { opacity: 1, y: 0 } : {}}
-//           transition={{ duration: 0.8 }}
-//           className="text-center mb-16"
-//         >
-//           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-//             About Me
-//           </h2>
-//           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
-//         </motion.div>
-
-//         <div className="grid md:grid-cols-2 gap-12 items-center">
-//           <motion.div
-//             initial={{ opacity: 0, x: -50 }}
-//             animate={isInView ? { opacity: 1, x: 0 } : {}}
-//             transition={{ duration: 0.8, delay: 0.2 }}
-//           >
-//             <div className="relative">
-//               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-75"></div>
-//               <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 h-80 flex items-center justify-center">
-//                 <div className="text-6xl">👨‍💻</div>
-//               </div>
-//             </div>
-//           </motion.div>
-
-//           <motion.div
-//             initial={{ opacity: 0, x: 50 }}
-//             animate={isInView ? { opacity: 1, x: 0 } : {}}
-//             transition={{ duration: 0.8, delay: 0.4 }}
-//             className="space-y-6"
-//           >
-//             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-//               I'm a passionate web developer with a keen interest in
-//               entrepreneurship. My journey began with a simple curiosity about
-//               how websites work, and it has evolved into a deep expertise in
-//               creating digital solutions that make a difference.
-//             </p>
-
-//             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-//               Beyond coding, I'm an entrepreneur at heart. I believe in the
-//               power of technology to solve real-world problems and create
-//               meaningful impact. I've founded several startups and continue to
-//               explore new opportunities in the digital space.
-//             </p>
-
-//             <div className="grid grid-cols-2 gap-4 mt-8">
-//               {stats.map((stat, index) => (
-//                 <motion.div
-//                   key={stat.label}
-//                   initial={{ opacity: 0, y: 20 }}
-//                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-//                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-//                   className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg"
-//                 >
-//                   <stat.icon className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-//                   <div className="text-2xl font-bold text-gray-800 dark:text-white">
-//                     {stat.value}
-//                   </div>
-//                   <div className="text-sm text-gray-600 dark:text-gray-300">
-//                     {stat.label}
-//                   </div>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const stats = [
-    { label: "Projects Completed", value: "50+", icon: Trophy },
-    { label: "Years Experience", value: "5+", icon: Star },
-    { label: "Happy Clients", value: "30+", icon: Zap },
-    { label: "Startups Founded", value: "3", icon: Rocket },
-  ];
+  const isInView = useInView(ref, { amount: 0.3 });
 
   return (
     <section id="about" ref={ref} className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Try this alternative approach using whileInView */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"
+            data-testid="about-me-heading"
+          >
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center"
           >
@@ -134,60 +45,104 @@ const AboutSection = () => {
                   />
                 </div>
 
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-500 rounded-full z-10 flex items-center justify-center text-white">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-500 rounded-full z-10 flex items-center justify-center text-white"
+                >
                   <Code size={28} />
-                </div>
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-full z-10 flex items-center justify-center text-white">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                  className="absolute -top-4 -left-4 w-12 h-12 bg-purple-500 rounded-full z-10 flex items-center justify-center text-white"
+                >
                   <Briefcase size={24} />
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a passionate web developer with a keen interest in
-              entrepreneurship. My journey began with a simple curiosity about
-              how technologies work, and it has taken me to explore varoious
-              tech at early age of teens. It evolved into me pursuing a carreer
-              in creating digital solutions that make a difference in lives...
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
+              Hi! I'm a web developer...
+              <i> you must have guessed that by now.</i> It all started from
+              exploring every complex fascinating softwares to learning HTML,
+              after i got my first computer, and that has led me to pursue this
+              tech stack as my venture.{" "}
+              <i>
+                just coded "hello world!" and i am so ready to hack NASA
+                already...
+              </i>
+              <br />I am passionate about crafting solutions and love imparting
+              others what i know. <i> I'm a good teacher btw...</i>
+            </motion.p>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              Beyond coding, I'm an entrepreneur at heart. I believe in the
-              power of technology to solve real-world problems and create
-              values. I've founded several startups and continue to explore new
-              opportunities. Its my ambition to be a future leader.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
+              Beyond coding, I'm an entrepreneur at heart. The first rule always
+              being to create meaning. I observe the world around me and develop
+              my own ideas to solve...
+              <i>
+                basically, I'm batman in my world. and btw please don't ask
+                about my terrible ventures!!
+              </i>
+              . I love to teach{" "}
+              <i>and feel proud to see the results i produced</i>
+            </motion.p>
 
-            {/* <div className="grid grid-cols-2 gap-4 mt-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg"
-                >
-                  <stat.icon className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-                  <div className="text-2xl font-bold text-gray-800 dark:text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div> */}
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed flex flex-row justify-between font-bold"
+            >
+              <span className="flex flex-col align-middle justify-center">
+                I know how to Learn.
+                <p className="text-sm text-gray-500 flex justify-center ">
+                  (I know how to teach)
+                </p>
+              </span>
+              <span className="flex flex-col align-middle justify-center ">
+                I know how to Lead.
+                <p className="text-sm text-gray-500 flex justify-center ">
+                  (I know how to Build)
+                </p>
+              </span>
+              <span className="flex flex-col align-middle justify-center">
+                I know how to Present.
+                <p className="text-sm text-gray-500 flex justify-center ">
+                  (I know how to deal)
+                </p>
+              </span>
+            </motion.span>
           </motion.div>
         </div>
       </div>
     </section>
   );
 };
+
 export default AboutSection;

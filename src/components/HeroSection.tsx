@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-100 via-white to-purple-100 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900"
     >
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl" />
@@ -32,9 +32,7 @@ const HeroSection = () => {
               Web Developer
             </span>
             <br />
-            <span className="text-gray-800 dark:text-white">
-              & Entrepreneur
-            </span>
+            <span className="text-gray-800 dark:text-white">& Engineer</span>
           </motion.h1>
 
           <motion.p
