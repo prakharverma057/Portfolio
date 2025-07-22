@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import AtomicSpinner from "atomic-spinner";
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,20 +21,13 @@ const LoadingScreen = () => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 bg-white dark:bg-gray-900 flex items-center justify-center"
         >
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="text-6xl"
-          >
-            💻
-          </motion.div>
+          <AtomicSpinner
+            displayElectronPaths={false}
+            electronsPerPath={6}
+            electronPathCount={4}
+            atomSize={500}
+            electronSpeed={0.4}
+          />
         </motion.div>
       )}
     </AnimatePresence>

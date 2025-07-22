@@ -1,6 +1,6 @@
 import { useRef, ChangeEvent, useState, FormEvent } from "react";
 import { useInView, motion } from "framer-motion";
-import { Mail, Linkedin, GitHub } from "react-feather";
+import { Mail, Linkedin, GitHub, FileText } from "react-feather";
 import emailjs from "@emailjs/browser";
 
 interface FormData {
@@ -147,6 +147,17 @@ const ContactSection = () => {
               >
                 <GitHub className="w-6 h-6" />
                 GitHub Profile
+              </motion.a>
+
+              <motion.a
+                whileHover={{ x: 10 }}
+                href="https://drive.google.com/file/d/1Yn2Map-ID_QLSDr4uq3xyqPvnbm8KRXU/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                <FileText className="w-6 h-6" />
+                Résumé
               </motion.a>
             </div>
           </motion.div>

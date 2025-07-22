@@ -66,18 +66,16 @@ const SkillsSection = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.3, delay: index * 0.03 }}
                 whileHover={{
-                  scale: 1.1,
-                  y: -10,
-                  transition: { duration: 0.2 },
+                  scale: 1.05,
+                  y: -5,
+                  transition: { duration: 0.1 },
                 }}
                 onHoverStart={() => {
-                  console.log("Hovering:", tech.name); // Debug log moved outside JSX
                   setHoveredSkill(tech.name);
                 }}
                 onHoverEnd={() => {
-                  console.log("Hover ended"); // Debug log moved outside JSX
                   setHoveredSkill(null);
                 }}
                 className="relative group cursor-pointer"
@@ -95,14 +93,15 @@ const SkillsSection = () => {
                     animate={{
                       opacity: hoveredSkill === tech.name ? 0.1 : 0,
                     }}
-                    className={`absolute inset-0 bg-gradient-to-br ${tech.color} rounded-2xl blur-3xl`}
+                    className={`absolute inset-0 bg-gradient-to-br ${tech.color} rounded-2xl blur-2xl`}
                   />
 
-                  {/* Icon */}
-                  <div className="relative z-10 text-center">
-                    <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                      {tech.icon}
-                    </div>
+                  <div className=" flex flex-col justify-center justify-items-center relative z-10 text-center">
+                    {/* logo */}
+                    <img
+                      src={tech.logo}
+                      className="mb-3 transform group-hover:scale-110 transition-transform duration-300 w-22 h-22 m-auto"
+                    />
 
                     {/* Tech name */}
                     <h3 className="font-bold text-gray-800 dark:text-white mb-2 text-sm">

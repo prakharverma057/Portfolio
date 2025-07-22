@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Zentry - Metagame Marketplace",
     description:
-      "A clone of Awwwards.com website; zentry.com. Build with Custom media kits.",
+      "A UI clone of Awwwards.com website; zentry.com. Build with Custom media kits.",
     image: "/zenclone.png",
     tech: ["React", "GSAP", "TailwindCSS", "UI kits"],
     github: "https://github.com/prakharverma057/AwwwardsGame",

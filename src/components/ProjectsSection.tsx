@@ -41,7 +41,7 @@ const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover"
+                  className="h-48 w-full object-cover"
                 />
               </div>
 
