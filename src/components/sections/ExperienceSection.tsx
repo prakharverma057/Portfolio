@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { experiences } from "../constants/experiences";
+import { experiences } from "../../constants/experiences";
 
 const ExperienceSection = () => {
   const ref = useRef(null);

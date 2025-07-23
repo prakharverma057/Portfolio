@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Trophy, Star, Zap, Rocket, Code, Briefcase } from "lucide-react";
+import { Code, Briefcase } from "lucide-react";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -9,7 +9,6 @@ const AboutSection = () => {
   return (
     <section id="about" ref={ref} className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Try this alternative approach using whileInView */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

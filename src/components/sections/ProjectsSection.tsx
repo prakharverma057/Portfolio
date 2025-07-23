@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GitHub, ExternalLink } from "react-feather";
-import { projects } from "../constants/projects";
+import { projects } from "../../constants/projects";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
