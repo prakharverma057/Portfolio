@@ -151,7 +151,7 @@ const ContactSection = () => {
 
               <motion.a
                 whileHover={{ x: 10 }}
-                href="https://drive.google.com/file/d/1Yn2Map-ID_QLSDr4uq3xyqPvnbm8KRXU/view?usp=sharing"
+                href="https://drive.google.com/file/d/1UpmHrNOqmNU1JTA4oI7GlkgJcr5Ll3Py/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

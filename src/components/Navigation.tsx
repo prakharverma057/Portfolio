@@ -23,7 +23,7 @@ const Navigation = () => {
     { name: "Contact", href: "#contact" },
     {
       name: "Résumé",
-      href: "https://drive.google.com/file/d/1Yn2Map-ID_QLSDr4uq3xyqPvnbm8KRXU/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1UpmHrNOqmNU1JTA4oI7GlkgJcr5Ll3Py/view?usp=sharing",
     },
   ];
 

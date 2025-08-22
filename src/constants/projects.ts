@@ -34,4 +34,13 @@ export const projects = [
   //   github: "#",
   //   demo: "#",
   // },
+  {
+    title: "RezBuddy - Resume Analyzer",
+    description:
+      "Analyze and optimize your resume for ATS compatibility and job matching. Get AI-powered feedback to improve your CV.",
+    image: "/rezbuddy.png",
+    tech: ["React", "TypeScript", "TailwindCSS", "PuterJS", "Zustand"],
+    github: "https://github.com/prakharverma057/resume-analyzer",
+    demo: "https://rezbuddy.vercel.app",
+  },
 ];

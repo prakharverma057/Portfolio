@@ -28,6 +28,28 @@ export const technologies = [
     color: "from-cyan-400 to-cyan-600",
     description: "Utility-first CSS framework",
   },
+  {
+    name: "Bootstrap",
+    category: "Frontend",
+    logo: "../skillLogos/bootstrap.svg",
+    color: "from-pink-400 to-purple-600",
+    description: "CSS framework",
+  },
+  {
+    name: "Zustand",
+    category: "Frontend",
+    logo: "../skillLogos/zustand.svg",
+    color: "from-[#423D37] to-[#3E5058]",
+    description: "State management library",
+  },
+
+  {
+    name: "React Router",
+    category: "Frontend",
+    logo: "../skillLogos/router.svg",
+    color: "from-red-400 to-red-600",
+    description: "Routing library for React",
+  },
 
   // Backend
   {
@@ -36,6 +58,13 @@ export const technologies = [
     logo: "../skillLogos/nodejs.svg",
     color: "from-green-500 to-green-700",
     description: "JavaScript runtime",
+  },
+  {
+    name: "Puter JS",
+    category: "Backend",
+    logo: "../skillLogos/puter.svg",
+    color: "from-[#0B09D8] to-blue-700",
+    description: "Remote Computing and AI integration",
   },
   // {
   //   name: "Python",
@@ -143,6 +172,13 @@ export const technologies = [
   },
   {
     name: "Leadership",
+    category: "Non-Tech",
+    logo: "../skillLogos/leadership.svg",
+    color: "from-indigo-400 to-indigo-500",
+    description: "On-ground activity, prioritization and organization",
+  },
+  {
+    name: "Product Management",
     category: "Non-Tech",
     logo: "../skillLogos/leadership.svg",
     color: "from-indigo-400 to-indigo-500",

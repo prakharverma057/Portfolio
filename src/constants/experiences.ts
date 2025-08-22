@@ -63,4 +63,12 @@ export const experiences = [
     description:
       "Leading Team of 80+ members, established grounds for every department embarking entrepreneurship in them. Collaborated with various companies like Microsoft, GFG, Monster energy, Harley Davidson, TVS, Smaaash, Glued  etc. ",
   },
+  {
+    id: 9,
+    title: "FrontEnd Developer Intern",
+    company: "CareerCrushLabs",
+    period: "2025",
+    description:
+      "Worked on building responsive and interactive web applications using React.js and collaborated with cross-functional teams to deliver high-quality software solutions. Learned Product Management and thoughtfully approached user pain points with solutions.",
+  },
 ];
