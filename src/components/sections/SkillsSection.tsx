@@ -104,7 +104,7 @@ const SkillsSection = () => {
                     />
 
                     {/* Tech name */}
-                    <h3 className="font-bold text-gray-800 dark:text-white mb-2 text-sm">
+                    <h3 className="font-bold text-gray-800 dark:text-white mb-2 text-sm text-nowrap">
                       {tech.name}
                     </h3>
 
