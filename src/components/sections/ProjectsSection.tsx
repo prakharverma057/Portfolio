@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GitHub, ExternalLink } from "react-feather";
-import { projects } from "../../constants/projects";
+import { projects } from "../../const/projects";
 
 const ProjectsSection = () => {
   const ref = useRef(null);
@@ -41,7 +41,7 @@ const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-48 w-full object-cover"
+                  className="h-48 w-full object-cover object-top"
                 />
               </div>
 
@@ -66,25 +66,26 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <motion.a
+                  { project.github && <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={project.github}
+                    target="_blank" 
                     className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                   >
                     <GitHub size={16} />
                     Source Code
-                  </motion.a>
+                  </motion.a>}
 
-                  <motion.a
+                  {project.demo && <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href={project.demo}
+                    href={project.demo} target="_blank" 
                     className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <ExternalLink size={16} />
                     Go Live
-                  </motion.a>
+                  </motion.a>}
                 </div>
               </div>
             </motion.div>

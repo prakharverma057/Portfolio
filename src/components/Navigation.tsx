@@ -23,7 +23,7 @@ const Navigation = () => {
     { name: "Contact", href: "#contact" },
     {
       name: "Résumé",
-      href: "https://drive.google.com/file/d/1UpmHrNOqmNU1JTA4oI7GlkgJcr5Ll3Py/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1nKdsidNebbDLB_Zezm6hikzAZlrNLQs0/view?usp=drive_link",
     },
   ];
 
@@ -102,6 +102,7 @@ const Navigation = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
+                  target="_blank"
                   whileHover={{ x: 10 }}
                   onClick={() => setIsOpen(false)}
                   className="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"

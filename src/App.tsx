@@ -13,19 +13,21 @@ import LoadingScreen from "./components/LoadingScreen";
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <LoadingScreen />
-      <CursorTrail />
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ExperienceSection />
-      <ContactSection />
-      <Footer />
-      <ScrollToTop />
-    </ThemeProvider>
+    <div className="overflow-x-hidden">
+      <ThemeProvider>
+        <LoadingScreen />
+        <CursorTrail />
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
+        <Footer />
+        <ScrollToTop />
+      </ThemeProvider>
+    </div>
   );
 };
 

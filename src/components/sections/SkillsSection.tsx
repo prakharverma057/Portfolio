@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useState } from "react";
-import { technologies, categories } from "../../constants/skills";
+import { technologies, categories } from "../../const/skills";
 
 const SkillsSection = () => {
   const ref = useRef(null);
